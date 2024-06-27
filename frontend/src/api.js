@@ -1,11 +1,12 @@
 import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
-const baseURL = import.meta.env.VITE_API_URL;
+const apiUrl = "/choreo-apis/wingways/backend-wingways/v1"
+
 console.log("Base URL:", baseURL); // Print the base URL to the console
 
 const api = axios.create({
-    baseURL: baseURL
+    baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : apiUrl,
 });
 
 api.interceptors.request.use(
