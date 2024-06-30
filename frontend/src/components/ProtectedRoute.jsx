@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
 function ProtectedRoute({ children }) {
     const [isAuthorized, setIsAuthorized] = useState(null)
 
-    //Check authorizationw when component mounts.
+    //Check authorization when component mounts.
     useEffect(() => {
         auth().catch(() => setIsAuthorized(false))
     }, [])
