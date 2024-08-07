@@ -1,6 +1,15 @@
 import '../styles/index.css';
 
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Bookingbar() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/flights-booking');
+    };
+
     return (
         <div className='flex justify-center'>
             <div className='flex flex-col p-4 w-2/3 bg-white rounded-[35px] mt-[-5rem] shadow-lg'>
@@ -79,7 +88,9 @@ function Bookingbar() {
                         Economy ⮟
                     </div>
 
-                    <button className='bg-[#000F94] px-6 py-2 text-white rounded-full hover:bg-blue-500'>
+                    <button
+                        onClick={handleClick}
+                        className='bg-[#000F94] px-6 py-2 text-white rounded-full hover:bg-blue-500'>
                         Search Flights
                     </button>
                 </div>

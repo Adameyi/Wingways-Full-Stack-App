@@ -6,6 +6,10 @@ import Register from "./pages/Register"
 import Dashboard from "./pages/Dashboard"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from "./components/ProtectedRoute"
+import FlightsBooking from "./pages/FlightsBooking"
+import SeatsDeparture from "./pages/SeatsDeparture"
+import SeatsReturning from "./pages/SeatsReturning"
+import Receipt from "./pages/Receipt"
 
 function Logout() {
   localStorage.clear() //Clear local storage there is no remaining old access tokens before register/login/logout.
@@ -31,6 +35,10 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/logout" element={<Logout />}></Route>
         <Route path="/register" element={<RegisterAndLogout />}></Route>
+        <Route path="/flights-booking" element={<FlightsBooking />}></Route>
+        <Route path="/seats-departure" element={<SeatsDeparture />}></Route>
+        <Route path="/seats-returning" element={<SeatsReturning />}></Route>
+        <Route path="/receipt" element={<Receipt />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>

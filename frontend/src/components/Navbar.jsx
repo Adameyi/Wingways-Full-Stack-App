@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom'
 import '../styles/index.css';
 
 function Navbar() {
@@ -16,8 +17,11 @@ function Navbar() {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
+
+    const isFixed = ['/'].includes(location.pathname)
+
     return (
-        <nav id='navbar' className='fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-20 px-4 bg-transparent transition-all duration-300 ease-in-out'>
+        <nav id='navbar' className={`${isFixed ? 'fixed' : 'relative'} top-0 left-0 right-0 z-50 flex items-center justify-between h-20 px-4 bg-transparent transition-all duration-300 ease-in-out`}>
             <a href="/" className='navbar-brand text-navy-blue font-roboto font-bold text-[2rem] text-[#000F94] mt-2'>WingWays</a>
             <ul className='navbar-links flex gap-4 mt-2'>
                 <li>
