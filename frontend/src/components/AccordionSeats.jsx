@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ title, fullname, price, seatNumber, seatClass, bagLimit, request }) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleAccordion = () => {
@@ -32,8 +32,29 @@ const Accordion = ({ title, content }) => {
                 </svg>
             </button>
             {isOpen && (
-                <div className='bg-slate-100 p-4'>
-                    {content}
+                <div className='bg-slate-100 p-4 grid sm:grid-cols-1 lg:grid-cols-2'>
+                    <div className='col-span-1'>
+                        <div>
+                            <b>Full Name:</b> {fullname}
+                        </div>
+                        <div>
+                            <b>Seat Number:</b> {seatNumber}
+                        </div>
+                        <div>
+                            <b>Class:</b> {seatClass}
+                        </div>
+                        <div>
+                            <b>Baggage Limit:</b> {bagLimit}
+                        </div>
+                        <div>
+                            <b>Special Requests:</b> {request}
+                        </div>
+                    </div>
+                    <div className='col-span-1 flex justify-end text-[1.5rem] text-center '>
+                        Price (AUD)
+                        <br />
+                        {price}
+                    </div>
                 </div>
             )}
         </div>

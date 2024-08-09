@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react"
-import api from "../api"
-import Note from "../components/Note"
-// import Navbar from "../components/Navbar"
+import MainOverlay from "../components/MainOverlay";
+import Navbar from "../components/Navbar"
+import '../styles/index.css';
 
 function Dashboard() {
-    return <div></div>
+    return (
+        <>
+            <Navbar />
+            <MainOverlay />
+        </>
+    )
 }
 
 export default Dashboard

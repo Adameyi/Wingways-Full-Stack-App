@@ -9,19 +9,35 @@ function BookingSeats() {
     const accordionData = [
         {
             title: 'Adult 1',
-            content: 'Content for Section 1'
+            fullname: 'Jack Enderson',
+            seatNumber: '1A',
+            seatClass: 'Economy',
+            bagLimit: '30kg',
+            request: 'N/A',
+            price: '$20.00'
         },
         {
             title: 'Adult 2',
-            content: 'Content for Section 2'
+            fullname: 'Emily Davis',
+            seatNumber: '1B',
+            seatClass: 'Economy',
+            bagLimit: '25kg',
+            request: 'Vegetarian meal',
+            price: '$22.00'
         },
         {
             title: 'Adult 3',
-            content: 'Content for Section 3'
+            fullname: 'Michael Smith',
+            seatNumber: '2A',
+            seatClass: 'Business',
+            bagLimit: '40kg',
+            request: 'Extra legroom',
+            price: '$50.00'
         }
-    ]
+    ];
+
     return (
-        <div className='h-screen bg-gray-300 flex '>
+        <div className='min-h-screen bg-gray-300 flex '>
             <div className='grid lg:grid-cols-2 w-full p-2'>
                 <div className='col-span-1 p-6'>
                     <h1 className='roboto-medium text-[2.5rem] text-white'>Key</h1>
@@ -67,39 +83,69 @@ function BookingSeats() {
                         <Accordion
                             key={index}
                             title={item.title}
-                            content={item.content}
+                            fullname={item.fullname}
+                            seatNumber={item.seatNumber}
+                            seatClass={item.seatClass}
+                            bagLimit={item.bagLimit}
+                            request={item.request}
+                            price={item.price}
                         >
                         </Accordion>
                     ))}
+                    <div class="mt-3 border-dashed border-2 border-slate-600 rounded-[1rem] text-[1.5rem] flex items-center justify-center p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#5f6368"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#5f6368"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" /></svg>
+                        Add Another Passenger
+                    </div>
+                    <div className='p-3 mt-2'>
+                        <div className='grid grid-cols-2'>
+                            <div className='col-span-1'>
+                                <h1>Total Seat(s)</h1>
+                            </div>
+                            <div className='col-span-1 flex justify-end'>
+                                <h1>Subtotal (AUD)</h1>
+                            </div>
+                            <hr />
+                        </div>
+                        <div className='grid grid-cols-2'>
+                            <div className='col-span-1 text-[2rem] roboto-medium'>
+                                <h1>3</h1>
+                            </div>
+                            <div className='col-span-1 flex justify-end text-[2rem] roboto-medium'>
+                                <h1>$20.00</h1>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
                 </div>
                 <div className='col-span-1 p-6'>
                     <h1 className='roboto-medium text-[2.5rem] '>Booking Flights for Jack - Adult 1</h1>
                     <div className='bg-slate-500 grid grid-cols-8 p-4 rounded-lg whitespace-nowrap'>
 
                         {/* Letters X-Axis */}
-                        <div className='col-span-1 flex items-center justify-center text-[2rem]'>
-                            {seats.map((seat, index) => (
+                        <div className='col-span-1 flex items-center justify-center text-[2rem]'>  </div>
+                        {seats.map((seat, index) => (
+                            <div key={index} className='col-span-1 text-[2rem] flex items-center justify-center mb-2 mt-2'>
+                                {seat}
+                            </div>
+                        ))}
+                        {/*  End of Letters X-Axis*/}
+
+
+                        {/* Grid */}
+                        {rows.map((row, index) => (
+                            <React.Fragment key={row}>
                                 <div key={index} className='col-span-1 text-[2rem] flex items-center justify-center mb-2 mt-2'>
-                                    {seat}
+                                    {row}
                                 </div>
-                            ))}
-                            {/*  End of Letters X-Axis*/}
 
-
-                            {rows.map((row) => (
-                                <React.Fragment key={row}>
-                                    <div key={index} className='col-span-1 text-[2rem] flex items-center justify-center mb-2 mt-2'>
-                                        {row}
+                                {seats.map((seat, index) => (
+                                    <div key={index} className={`col-span-1 text-[1.5rem] flex items-center justify-center mb-2 mt-2 ${seat === '' ? 'bg-slate-500' : 'bg-green-600'} h-14 w-14 rounded-lg`}>
+                                        {seat && `${row}${seat}`}
                                     </div>
-
-                                    {seats.map((seat, index) => (
-                                        <div key={index} className={`col-span-1 text-[2rem] flex items-center justify-center mb-2 mt-2 ${seat === '' ? 'bg-slate-500' : 'bg-green-600'} h-14 w-14 rounded-lg`}>
-                                            {seat && `${row}${seat}`}
-                                        </div>
-                                    ))}
-                                </React.Fragment>
-                            ))}
-                        </div>
+                                ))}
+                            </React.Fragment>
+                        ))}
                     </div>
                 </div>
             </div>
