@@ -10,6 +10,7 @@ import FlightsBooking from "./pages/FlightsBooking"
 import SeatsDeparture from "./pages/SeatsDeparture"
 import SeatsReturning from "./pages/SeatsReturning"
 import Receipt from "./pages/Receipt"
+import Payment from "./pages/Payment"
 
 function Logout() {
   localStorage.clear() //Clear local storage there is no remaining old access tokens before register/login/logout.
@@ -38,6 +39,7 @@ function App() {
         <Route path="/flights-booking" element={<FlightsBooking />}></Route>
         <Route path="/seats-departure" element={<SeatsDeparture />}></Route>
         <Route path="/seats-returning" element={<SeatsReturning />}></Route>
+        <Route path="/payment" element={<Payment />}></Route>
         <Route path="/receipt" element={<Receipt />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

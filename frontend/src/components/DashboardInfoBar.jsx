@@ -103,7 +103,7 @@ function DashboardInfoBar() {
                     </div>
                 </div>
                 <hr />
-                {/*  */}
+                {/* End of Flight Info Chunk  */}
 
                 {/* Flight Info Chunk */}
                 <div className='grid-cols-4 p-3 mb-2'>

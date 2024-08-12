@@ -1,5 +1,5 @@
 import '../styles/index.css';
-import Sidebar from "../components/Sidebar"
+import Sidebar from "./Sidebar"
 import DashboardInfoBar from './DashboardInfoBar';
 import MonthlyLineChart from './MonthlyLineChart';
 import Dropdown from './Dropdown';

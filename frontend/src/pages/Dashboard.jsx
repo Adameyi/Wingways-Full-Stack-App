@@ -1,4 +1,4 @@
-import MainOverlay from "../components/MainOverlay";
+import MainOverlay from "../components/DashboardMainOverlay";
 import Navbar from "../components/Navbar"
 import '../styles/index.css';
 

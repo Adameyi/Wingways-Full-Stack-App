@@ -1,18 +1,19 @@
 import '../styles/index.css';
 
 import React from 'react'
+import Tickets from './Tickets';
 
 function ReceiptTickets() {
     return (
-        <div className='h-screen bg-gray-300 flex justify-center p-12'>
-            <div>
-                <h1 >Trip Overview</h1>
-            </div>
-            <div className='grid grid-cols-3 p-4 w-full'>
-                <div className='col-span-1 bg-white p-3'>
-                    a
-                </div>
-            </div>
+        <div className='h-screen-min bg-gray-300 flex flex-col p-12'>
+
+            <h1 className='roboto-medium text-[3rem] flex items-center gap-2 text-blue-900'>
+                <div className='bg-blue-900 h-8 w-2'></div>
+                Trip Overview</h1>
+            <h2 className='roboto-regular text-[2rem]'>Flight Departure Tickets</h2>
+            <Tickets type="DepartureTicket" />
+            <h2 className='roboto-regular text-[2rem]'>Flight Arrival Tickets</h2>
+            <Tickets type="ArrivalTicket" />
         </div>
     )
 }
