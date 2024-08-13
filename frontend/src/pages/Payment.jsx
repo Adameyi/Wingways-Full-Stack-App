@@ -1,8 +1,7 @@
 import Navbar from '../components/Navbar';
 import PaymentColumn from '../components/PaymentColumn';
 import ReceiptColumn from '../components/ReceiptColumn';
-import ReceiptTickets from '../components/ReceiptTickets';
-import '../styles/index.css'; // If you have specific styles for the Home component
+import '../styles/index.css';
 
 
 function Payment() {
