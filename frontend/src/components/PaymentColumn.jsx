@@ -10,12 +10,12 @@ function PaymentColumn() {
 
     return (
         <div className='col-span-3 p-12'>
-            <div className='bg-white px-16 py-6 rounded-lg shadow-lg'>
+            <div className='bg-gradient-to-b to-[#fbfeff] from-blue-100  px-16 py-6 rounded-lg shadow-lg'>
                 <h1 className='text-[2.5rem] roboto-medium'>Payment Details</h1>
                 <p className='text-[1.25rem] roboto-regular'>Please fill out the payment details below to complete your booking</p>
                 <div className='px-12 py-6'>
                     <div className='flex items-center justify-center'>
-                        <div className='bg-[url("../assets/images/cardTemplate.png")] bg-contain bg-no-repeat w-[27rem] h-[16rem] rounded-[1.5rem]  w-full' />
+                        <div className='ml-24 bg-[url("../assets/images/cardTemplate.png")] bg-contain bg-no-repeat w-[27rem] h-[16rem] rounded-[1.5rem]  w-full' />
                     </div>
                     <div className='px-6 py-3'>
                         <div
