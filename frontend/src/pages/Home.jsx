@@ -7,6 +7,7 @@ import Values from "../components/Values";
 import Utilitybar from "../components/Utilitybar";
 
 import '../styles/index.css';
+import Footer from '../components/Footer';
 
 function Home() {
     return (
@@ -18,6 +19,7 @@ function Home() {
             <TopDestination />
             <Deals />
             <Values />
+            <Footer />
         </div>
     );
 }

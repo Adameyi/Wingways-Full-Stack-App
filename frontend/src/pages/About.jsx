@@ -6,6 +6,7 @@ import StaffSection from '../components/StaffSection'
 import ContactForm from '../components/ContactForm'
 
 import '../styles/index.css';
+import Footer from '../components/Footer'
 
 function About() {
     return (
@@ -15,6 +16,7 @@ function About() {
             <AboutSection />
             <StaffSection />
             <ContactForm />
+            <Footer />
         </div>
     )
 }

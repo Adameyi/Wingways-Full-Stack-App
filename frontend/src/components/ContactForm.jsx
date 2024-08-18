@@ -26,7 +26,7 @@ function ContactForm() {
                     </div>
                 </div>
                 {/* Circles End */}
-                <div className='flex flex-col gap-3 mt-[-12rem]'>
+                <div className='flex flex-col gap-3 mt-[-22rem]'>
                     <h2 className='flex items-center gap-2 text-[1.5rem] roboto-regular'>
                         <img src={facebookLogo} alt="Facebook Logo" />
                         WingWays

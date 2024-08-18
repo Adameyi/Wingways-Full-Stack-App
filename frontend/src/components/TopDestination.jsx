@@ -2,12 +2,22 @@ import '../styles/index.css';
 
 function TopDestination() {
     return (
-        <section className='h-[120vh] text-center mt-24'>
+        <section className='h-[120vh] text-center mt-24 '>
             <h2 className='text-[1.5rem] roboto-medium tracking-[1rem]'>POPULAR DESTINATIONS</h2>
             <h1 className='text-[5rem] roboto-bold'>Travel Around the World</h1>
             <p>Explore breathtaking destinations with our curated travel packages. Discover a world of adventure waiting for you.</p>
             {/* Airplane Window Section */}
-            <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10'>
+            <div className='relative container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 px-20'>
+
+                {/* Left Button */}
+                <div className='absolute top-48 shadow-xl h-12 w-12 rounded-full flex justify-center items-center z-10'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" /></svg>
+                </div>
+
+                {/* Right Button */}
+                <div className='absolute top-48 right-0 shadow-xl h-12 w-12 rounded-full flex justify-center items-center z-10'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" /></svg>
+                </div>
                 <div className='flex flex-col justify-end bg-cover bg-[url("../assets/images/window_norway.png")] w-[20rem] h-[30rem] rounded-full shadow-lg'>
                     <div className='pt-5 w-full h-1/3 bg-white rounded-b-full'>
                         <div className='flex justify-center items-center ml-[40%] mt-[-3.25rem] bg-white rounded-full h-16 w-16'>
@@ -57,7 +67,7 @@ function TopDestination() {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-center mt-12'>
+            <div className='flex justify-center mt-6'>
                 <button className='flex bg-[#86bfdb] px-6 py-2 text-[1.5rem] text-white rounded-full hover:bg-blue-500'>
                     View Destinations
                 </button>
