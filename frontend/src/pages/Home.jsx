@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import TopDestination from "../components/TopDestination";
+import TopDestinations from "../components/TopDestinations";
 import Bookingbar from "../components/Bookingbar";
 import Deals from "../components/Deals";
 import Values from "../components/Values";
@@ -16,7 +16,7 @@ function Home() {
             <Navbar />
             <Hero />
             <Bookingbar />
-            <TopDestination />
+            <TopDestinations />
             <Deals />
             <Values />
             <Footer />
