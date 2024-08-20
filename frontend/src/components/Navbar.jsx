@@ -27,13 +27,13 @@ function Navbar() {
     return (
         <nav
             id='navbar'
-            className={`${isRootOrAboutPath ? (isScrolling ? 'top-0' : 'top-6') : 'relative'} fixed left-0 right-0 z-50 flex items-center justify-between h-20 px-4 bg-transparent transition-all duration-300 ease-in-out ${isScrolling ? 'bg-white/90 shadow-md' : ''}`}
+            className={`${isRootOrAboutPath ? (isScrolling ? 'top-0' : 'top-6') : 'relative'} fixed left-0 right-0 z-50 flex items-center justify-between h-16 px-4 bg-transparent transition-all duration-300 ease-in-out ${isScrolling ? 'bg-white/90 shadow-md' : ''}`}
         >
-            <a href="/" className='navbar-brand text-navy-blue font-roboto font-bold text-[2rem] text-[#000F94] mt-2'>WingWays</a>
+            <a href="/" className='navbar-brand text-navy-blue font-roboto font-bold text-[2rem] text-[#000F94] mt-3'>WingWays</a>
             <ul className='navbar-links flex gap-4 mt-2'>
                 <li><a href="/flights" className='text-gray-800 hover:text-navy-blue'>Flights</a></li>
                 <li><a href="/destinations" className='text-gray-800 hover:text-navy-blue'>Destinations</a></li>
-                <li><a href="/deals" className='text-gray-800 hover:text-navy-blue'>Deals</a></li>
+                <li><a href="/hotels" className='text-gray-800 hover:text-navy-blue'>Hotels</a></li>
                 <li><a href="/bookings" className='text-gray-800 hover:text-navy-blue'>Bookings</a></li>
                 <li><a href="/about" className='text-gray-800 hover:text-navy-blue'>About</a></li>
                 <li><a href="/contact" className='text-gray-800 hover:text-navy-blue'>Contact</a></li>
