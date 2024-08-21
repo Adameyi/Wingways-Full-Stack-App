@@ -11,7 +11,7 @@ import '../styles/index.css';
 function AboutSection() {
     return (
         <>
-            <div className='mt-8 p-12'>
+            <div className='p-8'>
                 <div className='relative bg-[url("../assets/images/aboutPlane.png")] bg-center bg-cover w-full h-[65vh] text-white'>
                     <div className="absolute inset-0 bg-black bg-opacity-25" />
                     <h1 className='absolute bottom-[-2.5rem] text-[6.25rem] roboto-medium'>
