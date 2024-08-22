@@ -46,6 +46,7 @@ const destinations = [
     { id: 19, name: 'Canada', city: 'Vancouver', image: CanadaImage },
     { id: 20, name: 'Portugal', city: 'Porto', image: PortugalImage },
 ]
+
 function TopDestination() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })

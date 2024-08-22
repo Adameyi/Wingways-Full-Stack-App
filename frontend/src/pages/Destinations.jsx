@@ -6,6 +6,7 @@ import slideshow_norway from '../assets/images/slideshow_norway.png'
 import slideshow_greece from '../assets/images/slideshow_greece.png'
 import slideshow_japan from '../assets/images/slideshow_japan.png'
 import slideshow_peru from '../assets/images/slideshow_peru.png'
+import TravelSection from '../components/TravelSection'
 
 const slides = [
     {
@@ -35,6 +36,7 @@ function Destinations() {
     return (
         <>
             <MainSlideshow slides={slides} />
+            <TravelSection />
         </>
     )
 }
