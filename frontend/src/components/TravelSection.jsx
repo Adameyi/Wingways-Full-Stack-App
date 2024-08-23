@@ -9,7 +9,7 @@ const tagsOptions = ['Tropical', 'Mountains', 'Wildlife', 'Countryside', 'City',
 
 function TravelSection() {
     return (
-        <div className='h-screen'>
+        <div className='h-screen-min'>
             <h1 className='roboto-bold text-[2rem] p-4'>Popular Attractions</h1>
             <div className='grid grid-cols-4 px-4'>
                 {/* Search Bar */}
@@ -43,6 +43,10 @@ function TravelSection() {
                     <h1 className='text-center'>Travel Options</h1>
                     <p className='text-center'>Discover your perfect getaway with our diverse selection of breathtaking travel experiences</p>
                 </div>
+                <div className='col-span-4'>
+                    <OptionThumbnails />
+                </div>
+                <hr className='col-span-4 mb-4' />
                 <div className='col-span-1'>
                     <div className="relative w-full max-w-sm">
                         <svg
@@ -65,9 +69,6 @@ function TravelSection() {
 
                 <div className='col-span-3 px-4'>
                     <SelectableTags tags={tagsOptions} />
-                </div>
-                <div className='col-span-4'>
-                    <OptionThumbnails />
                 </div>
                 <div className='col-span-4'>
                     <TravelThumbnails />

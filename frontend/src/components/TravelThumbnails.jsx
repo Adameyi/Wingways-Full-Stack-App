@@ -311,7 +311,7 @@ function TopDestination() {
                 {visibleDestinations.map((dest, index) => (
                     <div
                         style={{ backgroundImage: `url(${dest.image})` }}
-                        className='bg-cover col-span-1 h-[60vh] flex flex-col justify-end rounded-2xl'>
+                        className='bg-cover col-span-1 h-[60vh] flex flex-col justify-end rounded-2xl shadow-lg'>
                         <div className='bg-gray-300 h-36 rounded-2xl p-3 flex justify-between'>
                             <div className='flex flex-col justify-between roboto-light'>
                                 <div>
@@ -325,15 +325,15 @@ function TopDestination() {
                             </div>
                             <div className='flex flex-col gap-1'>
                                 <div className='bg-[#C3B3B3] h-10 w-12 rounded-full flex justify-center items-center text-white'>
-                                    <p>2</p>
+                                    <p>{dest.accommodation.guests}</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#FFFFFF"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" /></svg>
                                 </div>
                                 <div className='bg-[#C3B3B3] h-10 w-12 rounded-full flex justify-center items-center text-white'>
-                                    <p>2</p>
+                                    <p>{dest.accommodation.bedrooms}</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M80-200v-240q0-27 11-49t29-39v-112q0-50 35-85t85-35h160q23 0 43 8.5t37 23.5q17-15 37-23.5t43-8.5h160q50 0 85 35t35 85v112q18 17 29 39t11 49v240h-80v-80H160v80H80Zm440-360h240v-80q0-17-11.5-28.5T720-680H560q-17 0-28.5 11.5T520-640v80Zm-320 0h240v-80q0-17-11.5-28.5T400-680H240q-17 0-28.5 11.5T200-640v80Z" /></svg>
                                 </div>
                                 <div className='bg-[#C3B3B3] h-10 w-12 rounded-full flex justify-center items-center text-white'>
-                                    <p>2</p>
+                                    <p>{dest.accommodation.bathrooms}</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M280-600q-33 0-56.5-23.5T200-680q0-33 23.5-56.5T280-760q33 0 56.5 23.5T360-680q0 33-23.5 56.5T280-600ZM200-80q-17 0-28.5-11.5T160-120q-33 0-56.5-23.5T80-200v-240h120v-30q0-38 26-64t64-26q20 0 37 8t31 22l56 62q8 8 15.5 15t16.5 13h274v-326q0-14-10-24t-24-10q-6 0-11.5 2.5T664-790l-50 50q5 17 2 33.5T604-676L494-788q14-9 30-11.5t32 3.5l50-50q16-16 36.5-25t43.5-9q48 0 81 33t33 81v326h80v240q0 33-23.5 56.5T800-120q0 17-11.5 28.5T760-80H200Z" /></svg>
                                 </div>
                             </div>

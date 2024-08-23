@@ -7,6 +7,8 @@ import slideshow_greece from '../assets/images/slideshow_greece.png'
 import slideshow_japan from '../assets/images/slideshow_japan.png'
 import slideshow_peru from '../assets/images/slideshow_peru.png'
 import TravelSection from '../components/TravelSection'
+import TravelSpecials from '../components/TravelSpecials'
+import Newsletter from '../components/Newsletter'
 
 const slides = [
     {
@@ -37,6 +39,8 @@ function Destinations() {
         <>
             <MainSlideshow slides={slides} />
             <TravelSection />
+            <Newsletter />
+            <TravelSpecials />
         </>
     )
 }
