@@ -9,27 +9,32 @@ import slideshow_peru from '../assets/images/slideshow_peru.png'
 import TravelSection from '../components/TravelSection'
 import TravelSpecials from '../components/TravelSpecials'
 import Newsletter from '../components/Newsletter'
+import Footer from '../components/Footer'
 
 const slides = [
     {
         imageUrl: slideshow_norway,
         caption: 'Where Sky Meets Earth',
-        location: 'Norway, Olso - Northern Lights',
+        description: 'Embark on an unforgettable travel across the winter landscapes and vivid glow of aurora lights',
+        location: 'Norway, Oslo - Northern Lights',
     },
     {
         imageUrl: slideshow_japan,
-        caption: 'Timeless Tranditions in the Land of Rising Sun',
-        location: 'Japan, Kyoto - Northern Lights',
+        caption: 'Timeless Traditions in the Land of Rising Sun',
+        description: 'Experience ancient culture and modern marvels in the heart of Japan',
+        location: 'Japan, Kyoto',
     },
     {
         imageUrl: slideshow_greece,
         caption: 'Twilight Tranquility in Santorini',
-        location: 'Greece, South Aegean - Northern Lights',
+        description: 'Discover whitewashed buildings and azure waters in this Greek paradise',
+        location: 'Greece, Santorini',
     },
     {
         imageUrl: slideshow_peru,
         caption: 'Explore the Lost City',
-        location: 'Peru, Machu Picchu - Northern Lights',
+        description: 'Journey through time in the mystical ruins of an ancient Incan citadel',
+        location: 'Peru, Machu Picchu',
     },
 ];
 
@@ -41,6 +46,7 @@ function Destinations() {
             <TravelSection />
             <Newsletter />
             <TravelSpecials />
+            <Footer />
         </>
     )
 }

@@ -40,8 +40,8 @@ function TravelSection() {
                 </div>
                 <hr className='col-span-4 mb-4' />
                 <div className='col-span-4'>
-                    <h1 className='text-center'>Travel Options</h1>
-                    <p className='text-center'>Discover your perfect getaway with our diverse selection of breathtaking travel experiences</p>
+                    <h1 className='text-center roboto-bold text-[2rem] p-4'>Travel Options</h1>
+                    <p className='text-center roboto-light pb-4'>Discover your perfect getaway with our diverse selection of breathtaking travel experiences</p>
                 </div>
                 <div className='col-span-4'>
                     <OptionThumbnails />

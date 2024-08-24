@@ -73,7 +73,7 @@ function TopDestination() {
     )
 
     return (
-        <section className='h-[120vh] text-center mt-24 '>
+        <section className='h-screen-min text-center mt-24 '>
             <motion.h2
                 ref={ref}
                 initial={{ opacity: 0, y: 20 }}

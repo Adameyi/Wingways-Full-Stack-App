@@ -105,9 +105,11 @@ function OptionThumbnails() {
 
         <div className='grid grid-cols-6 p-4 text-center roboto-light'>
             {visibleDestinations.map((dest, index) => (
-                <div className='flex flex-col justify-center items-center'>
-                    <div className='h-40 w-40 bg-gray-600 rounded-2xl' />
-                    <h1>{dest.name}</h1>
+                <div className='flex flex-col justify-center items-center gap-1'>
+                    <div
+                        style={{ backgroundImage: `url(${dest.image})` }}
+                        className='h-40 w-40 rounded-2xl' />
+                    <h1 className='roboto-medium text mt-1'>{dest.name}</h1>
                     <p>{dest.locations_count}+ Locations</p>
                 </div>
             ))}
