@@ -24,6 +24,7 @@ function Navbar() {
 
     const isRoot = location.pathname === '/'
     const isSlideshow = location.pathname === '/destinations'
+    const isHeroImage = location.pathname === '/hotels'
 
     return (
         <nav
