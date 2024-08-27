@@ -23,8 +23,7 @@ function Navbar() {
     }, [location.pathname]);
 
     const isRoot = location.pathname === '/'
-    const isSlideshow = location.pathname === '/destinations'
-    const isHeroImage = location.pathname === '/hotels'
+    const isSlideshow = location.pathname === '/destinations' || '/hotels'
 
     return (
         <nav

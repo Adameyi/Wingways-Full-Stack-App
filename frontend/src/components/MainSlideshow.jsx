@@ -24,7 +24,7 @@ const MainSlideshow = ({ slides }) => {
     };
 
     if (!slides || slides.length === 0) {
-        return null; // Return null if slides prop is empty.
+        return null; // Return null if slides prop is empty/missing.
     }
 
     return (
