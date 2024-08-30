@@ -11,6 +11,7 @@ import miniSlide_Selfoss from '../assets/images/miniSlide_Selfoss.png'
 import miniSlide_Reykajavik from '../assets/images/miniSlide_Reykajavik.png'
 import miniSlide_Yuanli from '../assets/images/miniSlide_Yuanli.png'
 import miniSlide_Osaka from '../assets/images/miniSlide_Osaka.png'
+import mobileViewport from './MobileViewport'
 
 const destinations = [
     {
@@ -73,9 +74,10 @@ const destinations = [
 function ShortSlideshow() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
+    const isMobile = mobileViewport();
 
     const [currentSlide, setCurrentSlide] = useState(0)
-    const destinationsPerSlide = 3
+    const destinationsPerSlide = isMobile ? 4 : 3
 
     const nextSlide = () => {
         setCurrentSlide((prev) =>

@@ -26,24 +26,27 @@ function ContactForm() {
                     </div>
                 </div>
                 {/* Circles End */}
+
+                {/* Social Media */}
                 <div className='flex flex-col gap-3 mt-[-22rem]'>
                     <h2 className='flex items-center gap-2 text-[1.5rem] roboto-regular'>
                         <img src={facebookLogo} alt="Facebook Logo" />
                         WingWays
                     </h2>
                     <h2 className='flex items-center gap-2 text-[1.5rem] roboto-regular'>
-                        <img src={twitterLogo} alt="Facebook Logo" />
+                        <img src={twitterLogo} alt="Twitter Logo" />
                         WingWays
                     </h2>
                     <h2 className='flex items-center gap-2 text-[1.5rem] roboto-regular'>
-                        <img src={youtubeLogo} alt="Facebook Logo" />
+                        <img src={youtubeLogo} alt="Youtube Logo" />
                         WingWays
                     </h2>
                     <h2 className='flex items-center gap-2 text-[1.5rem] roboto-regular'>
-                        <img src={instagramLogo} alt="Facebook Logo" />
+                        <img src={instagramLogo} alt="Instagram Logo" />
                         WingWays
                     </h2>
                 </div>
+                {/* Social Media End */}
 
             </div>
 
