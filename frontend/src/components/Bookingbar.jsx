@@ -1,83 +1,198 @@
+import axios from 'axios'
 import '../styles/index.css'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Bookingbar() {
+    const [activeSection, setActiveSection] = useState('flights')
+
+    const [fromQuery, setFromQuery] = useState('')
+    const [fromResults, setFromResults] = useState([])
+
+    const [toQuery, setToQuery] = useState('')
+    const [toResults, setToResults] = useState([])
+
+    const [selectedToAirport, setSelectedToAirport] = useState(null)
+    const [selectedFromAirport, setSelectedFromAirport] = useState(null)
+
+
     const navigate = useNavigate()
+
+    const handleAirportSelect = (airport, isFrom) => {
+        if (isFrom) {
+            setSelectedFromAirport(airport)
+            setFromQuery(`${airport.city}, ${airport.country} ${airport.iata_code}`)
+            setFromResults([])
+        } else {
+            setSelectedToAirport(airport)
+            setToQuery(`${airport.city}, ${airport.country} ${airport.iata_code}`)
+            setToResults([])
+        }
+    }
+
+    const handleSearchChange = async (event, isFrom) => {
+        const query = event.target.value
+        if (isFrom) {
+            setFromQuery(query)
+        } else {
+            setToQuery(query)
+        }
+
+        if (query.length > 1) {
+            try {
+                const response = await axios.get('/api/search-airports/', { params: { q: query } })
+                if (Array.isArray(response.data)) {
+                    if (isFrom) {
+                        setFromResults(response.data)
+                    } else {
+                        setToResults(response.data)
+                    }
+                } else {
+                    console.error('API response is not an array:', response.data)
+                    if (isFrom) {
+                        setFromResults([])
+                    } else {
+                        setToResults([])
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching search results:', error)
+                if (isFrom) {
+                    setFromResults([])
+                } else {
+                    setToResults([])
+                }
+            }
+        } else {
+            if (isFrom) {
+                setFromResults([])
+            } else {
+                setToResults([])
+            }
+        }
+    }
 
     const handleClick = () => {
         navigate('/flights-booking')
     }
 
-    const [activeSection, setActiveSection] = useState('flights')
-
-    //Handle changes to Bookingbar.
     const handleSectionChange = (section) => {
         setActiveSection(section)
     }
 
-    const FlightSection = () => (
-        <>
-            < div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-3' >
-                <div className='relative border-2 p-1'>
-                    <div className='absolute top-0 left-0 p-2'>
-                        From
+    const FlightSection = () => {
+        return (
+            <>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-3'>
+                    <div className='relative border-2 p-1'>
+                        <div className='absolute top-0 left-0 p-2'>
+                            From?
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <input
+                                type='text'
+                                value={fromQuery}
+                                onChange={(e) => handleSearchChange(e, true)}
+                                placeholder='Where From?'
+                                className='w-2/3 mt-3 text-center roboto-light text-4xl'
+                            />
+                        </div>
+                        {fromQuery && fromResults.length > 0 && (
+                            <div className='absolute border bg-white mt-2 w-full z-10'>
+                                {fromResults.map((result) => (
+                                    <div
+                                        key={result.iata_code}
+                                        className='p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center'
+                                        onClick={() => handleAirportSelect(result, true)}
+                                    >
+                                        <span>{result.city}, {result.country} ({result.iata_code})</span>
+                                        <img
+                                            src={`https://flagcdn.com/w20/${String(result.country_code).toLowerCase()}.png`}
+                                            alt={`${result.country} flag`}
+                                            className="w-5 h-auto"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        <div className='absolute top-0 right-0 p-2'>
+                            a
+                        </div>
                     </div>
-                    <div className='text-center text-[2.5rem]'>
-                        SYD
-                    </div>
-                    <div className='absolute top-0 right-0 p-2'>
-                        Sydney,<br />Australia
-                    </div>
-                </div>
 
-                <div className='relative border-2 p-1'>
-                    <div className='absolute top-0 left-0 p-2'>
-                        To
+                    <div className='relative border-2 p-1'>
+                        <div className='absolute top-0 left-0 p-2'>
+                            To
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <input
+                                type='text'
+                                value={toQuery}
+                                onChange={(e) => handleSearchChange(e, false)}
+                                placeholder='Where To?'
+                                className='w-2/3 mt-3 text-center roboto-light text-4xl'
+                            />
+                        </div>
+                        {toQuery && toResults.length > 0 && (
+                            <div className='absolute border bg-white mt-2 w-full z-10'>
+                                {toResults.map((result) => (
+                                    <div
+                                        key={result.iata_code}
+                                        className='p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center'
+                                        onClick={() => handleAirportSelect(result, false)}
+                                    >
+                                        <span>{result.city}, {result.country} ({result.iata_code})</span>
+                                        <img
+                                            src={`https://flagcdn.com/w20/${String(result.country_code).toLowerCase()}.png`}
+                                            alt={`${result.country} flag`}
+                                            className="w-5 h-auto"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        <div className='absolute top-0 right-0 p-2'>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-200Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Z" /></svg>
+                        </div>
                     </div>
-                    <div className='roboto-light text-center text-[2.5rem] text-gray-400'>
-                        Where to?
-                    </div>
-                    <div className='absolute top-0 right-0 p-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-200Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Z" /></svg>
-                    </div>
-                </div>
 
-                <div className='relative border-2 p-1'>
-                    <div className='absolute top-0 left-0 p-2'>
-                        Date
+                    <div className='relative border-2 p-1'>
+                        <div className='absolute top-0 left-0 p-2'>
+                            Date
+                        </div>
+                        <div className='roboto-light text-center text-[2.5rem] text-gray-400'>
+                            Fly When?
+                        </div>
+                        <div className='absolute top-0 right-0 p-2'>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-400q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" /></svg>
+                        </div>
                     </div>
-                    <div className='roboto-light text-center text-[2.5rem] text-gray-400'>
-                        Fly When?
-                    </div>
-                    <div className='absolute top-0 right-0 p-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-400q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" /></svg>
-                    </div>
-                </div>
-            </div >
-            {/* Flight Setting and Class */}
-            <hr />
-            <div className='flex items-center flex-start text-[1.5rem] mt-4 '>
-                <div className='flex flex-grow items-center'>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className='mr-2' fill="#5f6368"><path d="m397-115-99-184-184-99 71-70 145 25 102-102-317-135 84-86 385 68 124-124q23-23 57-23t57 23q23 23 23 56.5T822-709L697-584l68 384-85 85-136-317-102 102 26 144-71 71Z" /></svg>
-                    Round Trip ⮟
-                </div>
+                </div >
 
-                <div className='flex flex-grow items-center'>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className='mr-2' fill="#5f6368"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Z" /></svg>
-                    Economy ⮟
-                </div>
+                {/* Flight Setting and Class */}
+                <hr />
+                <div className='flex items-center flex-start text-[1.5rem] mt-4 '>
+                    <div className='flex flex-grow items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className='mr-2' fill="#5f6368"><path d="m397-115-99-184-184-99 71-70 145 25 102-102-317-135 84-86 385 68 124-124q23-23 57-23t57 23q23 23 23 56.5T822-709L697-584l68 384-85 85-136-317-102 102 26 144-71 71Z" /></svg>
+                        Round Trip ⮟
+                    </div>
 
-                <button
-                    onClick={handleClick}
-                    className='bg-[#000F94] px-6 py-2 text-white rounded-full hover:bg-blue-500'>
-                    Search Flights
-                </button>
-            </div>
-            {/* Flight Settings and Class End */}
-        </>
-    )
+                    <div className='flex flex-grow items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className='mr-2' fill="#5f6368"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Z" /></svg>
+                        Economy ⮟
+                    </div>
+
+                    <button
+                        onClick={handleClick}
+                        className='bg-[#000F94] px-6 py-2 text-white rounded-full hover:bg-blue-500'>
+                        Search Flights
+                    </button>
+                </div>
+                {/* Flight Settings and Class End */}
+            </>
+        )
+    }
 
     const HotelSection = () => (
         <>

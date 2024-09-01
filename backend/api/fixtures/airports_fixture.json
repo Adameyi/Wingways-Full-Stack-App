@@ -1,0 +1,502 @@
+[
+    {
+        "model": "api.airport",
+        "pk": 1,
+        "fields": {
+            "iata_code": "SYD",
+            "city": "Sydney",
+            "country": "Australia",
+            "country_code": "AU"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 2,
+        "fields": {
+            "iata_code": "LAX",
+            "city": "Los Angeles",
+            "country": "USA",
+            "country_code": "US"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 3,
+        "fields": {
+            "iata_code": "JFK",
+            "city": "New York",
+            "country": "USA",
+            "country_code": "US"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 4,
+        "fields": {
+            "iata_code": "LHR",
+            "city": "London",
+            "country": "United Kingdom",
+            "country_code": "GB"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 5,
+        "fields": {
+            "iata_code": "CDG",
+            "city": "Paris",
+            "country": "France",
+            "country_code": "FR"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 6,
+        "fields": {
+            "iata_code": "HND",
+            "city": "Tokyo",
+            "country": "Japan",
+            "country_code": "JP"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 7,
+        "fields": {
+            "iata_code": "DXB",
+            "city": "Dubai",
+            "country": "United Arab Emirates",
+            "country_code": "AE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 8,
+        "fields": {
+            "iata_code": "SFO",
+            "city": "San Francisco",
+            "country": "USA",
+            "country_code": "US"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 9,
+        "fields": {
+            "iata_code": "DEL",
+            "city": "Delhi",
+            "country": "India",
+            "country_code": "IN"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 10,
+        "fields": {
+            "iata_code": "SIN",
+            "city": "Singapore",
+            "country": "Singapore",
+            "country_code": "SG"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 11,
+        "fields": {
+            "iata_code": "GRU",
+            "city": "São Paulo",
+            "country": "Brazil",
+            "country_code": "BR"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 12,
+        "fields": {
+            "iata_code": "MIA",
+            "city": "Miami",
+            "country": "USA",
+            "country_code": "US"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 13,
+        "fields": {
+            "iata_code": "JNB",
+            "city": "Johannesburg",
+            "country": "South Africa",
+            "country_code": "ZA"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 14,
+        "fields": {
+            "iata_code": "HKG",
+            "city": "Hong Kong",
+            "country": "Hong Kong",
+            "country_code": "HK"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 15,
+        "fields": {
+            "iata_code": "BKK",
+            "city": "Bangkok",
+            "country": "Thailand",
+            "country_code": "TH"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 16,
+        "fields": {
+            "iata_code": "AMS",
+            "city": "Amsterdam",
+            "country": "Netherlands",
+            "country_code": "NL"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 17,
+        "fields": {
+            "iata_code": "IST",
+            "city": "Istanbul",
+            "country": "Turkey",
+            "country_code": "TR"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 18,
+        "fields": {
+            "iata_code": "KIX",
+            "city": "Osaka",
+            "country": "Japan",
+            "country_code": "JP"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 19,
+        "fields": {
+            "iata_code": "SVO",
+            "city": "Moscow",
+            "country": "Russia",
+            "country_code": "RU"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 20,
+        "fields": {
+            "iata_code": "DUB",
+            "city": "Dublin",
+            "country": "Ireland",
+            "country_code": "IE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 21,
+        "fields": {
+            "iata_code": "ZRH",
+            "city": "Zurich",
+            "country": "Switzerland",
+            "country_code": "CH"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 22,
+        "fields": {
+            "iata_code": "VIE",
+            "city": "Vienna",
+            "country": "Austria",
+            "country_code": "AT"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 23,
+        "fields": {
+            "iata_code": "AUH",
+            "city": "Abu Dhabi",
+            "country": "United Arab Emirates",
+            "country_code": "AE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 24,
+        "fields": {
+            "iata_code": "MUC",
+            "city": "Munich",
+            "country": "Germany",
+            "country_code": "DE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 25,
+        "fields": {
+            "iata_code": "BOM",
+            "city": "Mumbai",
+            "country": "India",
+            "country_code": "IN"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 26,
+        "fields": {
+            "iata_code": "LIM",
+            "city": "Lima",
+            "country": "Peru",
+            "country_code": "PE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 27,
+        "fields": {
+            "iata_code": "YVR",
+            "city": "Vancouver",
+            "country": "Canada",
+            "country_code": "CA"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 28,
+        "fields": {
+            "iata_code": "SCL",
+            "city": "Santiago",
+            "country": "Chile",
+            "country_code": "CL"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 29,
+        "fields": {
+            "iata_code": "WAW",
+            "city": "Warsaw",
+            "country": "Poland",
+            "country_code": "PL"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 30,
+        "fields": {
+            "iata_code": "CPH",
+            "city": "Copenhagen",
+            "country": "Denmark",
+            "country_code": "DK"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 31,
+        "fields": {
+            "iata_code": "PRG",
+            "city": "Prague",
+            "country": "Czech Republic",
+            "country_code": "CZ"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 32,
+        "fields": {
+            "iata_code": "KUL",
+            "city": "Kuala Lumpur",
+            "country": "Malaysia",
+            "country_code": "MY"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 33,
+        "fields": {
+            "iata_code": "OSL",
+            "city": "Oslo",
+            "country": "Norway",
+            "country_code": "NO"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 34,
+        "fields": {
+            "iata_code": "LHE",
+            "city": "Lahore",
+            "country": "Pakistan",
+            "country_code": "PK"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 35,
+        "fields": {
+            "iata_code": "DUS",
+            "city": "Dusseldorf",
+            "country": "Germany",
+            "country_code": "DE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 36,
+        "fields": {
+            "iata_code": "STO",
+            "city": "Stockholm",
+            "country": "Sweden",
+            "country_code": "SE"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 37,
+        "fields": {
+            "iata_code": "BUD",
+            "city": "Budapest",
+            "country": "Hungary",
+            "country_code": "HU"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 38,
+        "fields": {
+            "iata_code": "TPE",
+            "city": "Taipei",
+            "country": "Taiwan",
+            "country_code": "TW"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 39,
+        "fields": {
+            "iata_code": "HNL",
+            "city": "Honolulu",
+            "country": "USA",
+            "country_code": "US"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 40,
+        "fields": {
+            "iata_code": "SJU",
+            "city": "San Juan",
+            "country": "Puerto Rico",
+            "country_code": "PR"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 41,
+        "fields": {
+            "iata_code": "LBA",
+            "city": "Leeds",
+            "country": "United Kingdom",
+            "country_code": "GB"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 42,
+        "fields": {
+            "iata_code": "EWR",
+            "city": "Newark",
+            "country": "USA",
+            "country_code": "US"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 43,
+        "fields": {
+            "iata_code": "MLA",
+            "city": "Malta",
+            "country": "Malta",
+            "country_code": "MT"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 44,
+        "fields": {
+            "iata_code": "VNO",
+            "city": "Vilnius",
+            "country": "Lithuania",
+            "country_code": "LT"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 45,
+        "fields": {
+            "iata_code": "TUN",
+            "city": "Tunis",
+            "country": "Tunisia",
+            "country_code": "TN"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 46,
+        "fields": {
+            "iata_code": "BLQ",
+            "city": "Bologna",
+            "country": "Italy",
+            "country_code": "IT"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 47,
+        "fields": {
+            "iata_code": "HER",
+            "city": "Heraklion",
+            "country": "Greece",
+            "country_code": "GR"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 48,
+        "fields": {
+            "iata_code": "KIV",
+            "city": "Chișinău",
+            "country": "Moldova",
+            "country_code": "MD"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 49,
+        "fields": {
+            "iata_code": "LWO",
+            "city": "Lviv",
+            "country": "Ukraine",
+            "country_code": "UA"
+        }
+    },
+    {
+        "model": "api.airport",
+        "pk": 50,
+        "fields": {
+            "iata_code": "BGO",
+            "city": "Bergen",
+            "country": "Norway",
+            "country_code": "NO"
+        }
+    }
+]
