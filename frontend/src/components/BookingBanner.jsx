@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import '../styles/index.css'
 import BookingReturningDate from './BookingReturningDate'
 import BookingDepartureDate from './BookingDepartureDate'
@@ -19,6 +20,24 @@ function BookingBanner({ hideDropdowns, hideReturning,  from, to , fromIataCode,
                     <svg xmlns="http://www.w3.org/2000/svg" className='ml-6' height="70px" viewBox="0 -960 960 960" width="70px" fill="#adadad"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" /></svg>
                 </h1>
                 <div className='border-2 mb-8 border-[#adadad] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 w-2/5 rounded-lg p-2 whitespace-nowrap'>
+=======
+import '../styles/index.css';
+import BookingReturningDate from './BookingReturningDate';
+import BookingDepartureDate from './BookingDepartureDate';
+import Dropdown from './Dropdown'
+import DropdownItem from './DropdownItem'
+
+function BookingBanner({ hideDropdowns, hideReturning }) {
+
+    return (
+        <div className='mx-auto text-white bg-[#454545] px-12 w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 '>
+            <div className='col-span-10'>
+                <h1 className='flex items-center text-[6rem] roboto-bold'>
+                    SYD-ADL
+                    <svg xmlns="http://www.w3.org/2000/svg" className='ml-6' height="70px" viewBox="0 -960 960 960" width="70px" fill="#adadad"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" /></svg>
+                </h1>
+                <div className='border-2 mb-8 border-[#adadad] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 w-2/5 rounded-lg p-2 flex whitespace-nowrap'>
+>>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                     <BookingDepartureDate />
                     <div className='flex items-center justify-center col-span-1'>
                         <svg className='' xmlns="http://www.w3.org/2000/svg" height="70px" viewBox="0 -960 960 960" width="70px" fill="#adadad"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" /></svg>
@@ -66,7 +85,14 @@ function BookingBanner({ hideDropdowns, hideReturning,  from, to , fromIataCode,
             )}
         </div >
 
+<<<<<<< HEAD
     )
 }
 
 export default BookingBanner
+=======
+    );
+}
+
+export default BookingBanner;
+>>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18

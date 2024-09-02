@@ -20,10 +20,17 @@ function Hero() {
                     </button>
                 </div>
                 <div className='w-[55%] relative'>
+<<<<<<< HEAD
                 <div className='absolute right-10 rounded-[35px] bg-blue-900 w-[30rem] h-[16rem] mt-[-1.5rem] '>
                         <img src={heroPlane} alt="hero_airplane" className='w-full h-full object-cover' />
                     </div>
                     <img src={heroIstanbul} alt="hero_istanbul" className='absolute mt-[8rem]' />
+=======
+                    <img src={heroIstanbul} alt="hero_istanbul" className='absolute z-10 mt-[8rem]' />
+                    <div className='absolute right-10 rounded-[35px] bg-blue-900 w-[30rem] h-[16rem] mt-[-1.5rem] '>
+                        <img src={heroPlane} alt="hero_airplane" className=' w-full h-full object-cover' />
+                    </div>
+>>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                 </div>
             </div>
         </section>
