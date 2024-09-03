@@ -1,11 +1,7 @@
 import axios from 'axios'
-<<<<<<< HEAD
 import DatePicker from 'react-datepicker'
 import '../styles/index.css'
 import 'react-datepicker/dist/react-datepicker.css'
-=======
-import '../styles/index.css'
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
 
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -22,12 +18,11 @@ function Bookingbar() {
     const [selectedToAirport, setSelectedToAirport] = useState(null)
     const [selectedFromAirport, setSelectedFromAirport] = useState(null)
 
-<<<<<<< HEAD
     const [fromIataCode, setFromIataCode] = useState(null);
     const [toIataCode, setToIataCode] = useState(null);
 
-    const [tripType, setTripType] = useState('roundTrip');
-    const [tripClass, setTripClass] = useState('economy');
+    const [tripType, setTripType] = useState('Round Trip');
+    const [tripClass, setTripClass] = useState('Economy');
 
     const [departureDate, setDepartureDate] = useState(null);
     const [returnDate, setReturnDate] = useState(null);
@@ -39,7 +34,7 @@ function Bookingbar() {
     const handleTripTypeChange = (event) => {
         const selectedValue = event.target.value
         setTripType(selectedValue)
-        setShowReturnDate(selectedValue === 'roundTrip')
+        setShowReturnDate(selectedValue === 'Round Trip')
         // console.log('Hide Return Date:', showReturnDate)
     }
 
@@ -49,27 +44,16 @@ function Bookingbar() {
         return date.toLocaleDateString(undefined, options)
     }
 
-=======
-
-    const navigate = useNavigate()
-
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
     const handleAirportSelect = (airport, isFrom) => {
         if (isFrom) {
             setSelectedFromAirport(airport)
             setFromQuery(`${airport.city}, ${airport.country} ${airport.iata_code}`)
-<<<<<<< HEAD
             setFromIataCode(airport.iata_code)
-=======
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
             setFromResults([])
         } else {
             setSelectedToAirport(airport)
             setToQuery(`${airport.city}, ${airport.country} ${airport.iata_code}`)
-<<<<<<< HEAD
             setToIataCode(airport.iata_code)
-=======
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
             setToResults([])
         }
     }
@@ -117,7 +101,6 @@ function Bookingbar() {
     }
 
     const handleClick = () => {
-<<<<<<< HEAD
         navigate('/flights-booking', {
             state: {
                 from: fromQuery,
@@ -131,9 +114,6 @@ function Bookingbar() {
             },
         })
         console.log(state)
-=======
-        navigate('/flights-booking')
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
     }
 
     const handleSectionChange = (section) => {
@@ -153,13 +133,8 @@ function Bookingbar() {
                                 type='text'
                                 value={fromQuery}
                                 onChange={(e) => handleSearchChange(e, true)}
-<<<<<<< HEAD
                                 placeholder='From?'
                                 className='w-2/3 mt-3 text-center roboto-light text-3xl'
-=======
-                                placeholder='Where From?'
-                                className='w-2/3 mt-3 text-center roboto-light text-4xl'
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                             />
                         </div>
                         {fromQuery && fromResults.length > 0 && (
@@ -195,11 +170,7 @@ function Bookingbar() {
                                 value={toQuery}
                                 onChange={(e) => handleSearchChange(e, false)}
                                 placeholder='Where To?'
-<<<<<<< HEAD
                                 className='w-2/3 mt-3 text-center roboto-light text-3xl'
-=======
-                                className='w-2/3 mt-3 text-center roboto-light text-4xl'
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                             />
                         </div>
                         {toQuery && toResults.length > 0 && (
@@ -229,7 +200,6 @@ function Bookingbar() {
                         <div className='absolute top-0 left-0 p-2'>
                             Date
                         </div>
-<<<<<<< HEAD
                         <div className='flex pt-2 justify-center flex-row roboto-light text-center text-[2.5rem] text-gray-400'>
                         <DatePicker
                             selected={departureDate}
@@ -257,11 +227,6 @@ function Bookingbar() {
     )}
                         </div>
                         
-=======
-                        <div className='roboto-light text-center text-[2.5rem] text-gray-400'>
-                            Fly When?
-                        </div>
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                         <div className='absolute top-0 right-0 p-2'>
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-400q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" /></svg>
                         </div>
@@ -273,24 +238,19 @@ function Bookingbar() {
                 <div className='flex items-center flex-start text-[1.5rem] mt-4 '>
                     <div className='flex flex-grow items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className='mr-2' fill="#5f6368"><path d="m397-115-99-184-184-99 71-70 145 25 102-102-317-135 84-86 385 68 124-124q23-23 57-23t57 23q23 23 23 56.5T822-709L697-584l68 384-85 85-136-317-102 102 26 144-71 71Z" /></svg>
-<<<<<<< HEAD
                         <select
                             value={tripType}
                             name="Trip Type"
                             className='bg-white border rounded px-2 py-1'
                             onChange={handleTripTypeChange}
                         >
-                            <option value="roundTrip">Round Trip</option>
-                            <option value="oneWay">One-Way</option>
+                            <option value="Round Trip">Round Trip</option>
+                            <option value="One Way">One-Way</option>
                         </select>
-=======
-                        Round Trip ⮟
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                     </div>
 
                     <div className='flex flex-grow items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" className='mr-2' fill="#5f6368"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Z" /></svg>
-<<<<<<< HEAD
                         <select
                             value={tripClass}
                             name="Trip Type"
@@ -301,9 +261,6 @@ function Bookingbar() {
                             <option value="business">Business</option>
                             <option value="firstClass">First Class</option>
                         </select>
-=======
-                        Economy ⮟
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                     </div>
 
                     <button
@@ -348,15 +305,9 @@ function Bookingbar() {
                     <div className='absolute top-0 left-0 p-2'>
                         Date
                     </div>
-<<<<<<< HEAD
                     <DatePicker>
 
                     </DatePicker>
-=======
-                    <div className='roboto-light text-center text-[2.5rem] text-gray-400'>
-                        Fly When?
-                    </div>
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                     <div className='absolute top-0 right-0 p-2'>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-400q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" /></svg>
                     </div>
@@ -471,8 +422,4 @@ function Bookingbar() {
     )
 }
 
-<<<<<<< HEAD
 export default Bookingbar
-=======
-export default Bookingbar
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18

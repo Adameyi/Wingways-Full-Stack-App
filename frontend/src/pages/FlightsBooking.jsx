@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Navbar from '../components/Navbar'
 import '../styles/index.css'
 import BookingBanner from "../components/BookingBanner"
@@ -22,25 +21,9 @@ function FlightsBooking() {
                             departureDate={departureDate} 
                             returnDate={returnDate} 
             />
-=======
-import Navbar from '../components/Navbar';
-import '../styles/index.css'; // If you have specific styles for the Home component
-import BookingBanner from "../components/BookingBanner"
-import BookingSelection from "../components/BookingSelection"
-
-function Home() {
-    return (
-        <div>
-            <Navbar />
-            <BookingBanner />
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
             <BookingSelection />
         </div>
     );
 }
 
-<<<<<<< HEAD
 export default FlightsBooking;
-=======
-export default Home;
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18

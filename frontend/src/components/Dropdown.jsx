@@ -3,14 +3,16 @@ import { useState } from 'react';
 import '../styles/index.css'
 
 function Dropdown({ header, children }) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false)
+    const [selectedItem, setSelectedItem] = useState(header)
 
     const toggleDropdown = () => {
         //Set Dropdown to opposite of current active state.
         setIsOpen(!isOpen);
     }
 
-    const closeDropdown = () => {
+    const closeDropdown = (value) => {
+        setSelectedItem(value)
         setIsOpen(false);
     }
 
@@ -20,7 +22,7 @@ function Dropdown({ header, children }) {
                 onClick={toggleDropdown}
                 className='border-2 w-[10rem] rounded-lg px-4 py-2 ml-2 mt-2 focus:outline-none'
             >
-                {header} <span className='absolute right-1'>▾</span>
+                {selectedItem} <span className='absolute right-1'>▾</span>
             </button>
 
             {isOpen && (

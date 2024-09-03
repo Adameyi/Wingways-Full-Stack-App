@@ -17,7 +17,7 @@ function BookingSelection() {
 
 
     return (
-        <div className='h-screen bg-gray-300 flex justify-center'>
+        <div className='h-screen-min bg-gray-300 flex justify-center'>
             <div className='w-2/3 p-6'>
                 <div className='grid lg:grid-cols-4 gap-4 mb-1'>
                     <h1 className='flex items-center justify-center col-span-1'>Departing Flights</h1>

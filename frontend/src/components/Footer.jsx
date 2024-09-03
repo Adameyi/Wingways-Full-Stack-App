@@ -13,11 +13,7 @@ import footerBag8 from '../assets/images/footerBag8.png'
 
 function Footer() {
     return (
-<<<<<<< HEAD
-        <div className='bg-[#000F94] overflow-hidden'>
-=======
         <div className='bg-[#000F94]'>
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
             <div className='p-6'>
                 <div className='relative bg-[#000A65] rounded-2xl flex justify-center p-2'>
                     <div className='absolute left-0 top-0 h-10 w-[25rem] rounded-tl-[1.25rem] rounded-br-[1.25rem] bg-[#0012AF]' />
@@ -109,11 +105,7 @@ function Footer() {
                     </div>
 
                 </div>
-<<<<<<< HEAD
-                <h1 className='mt-[-5rem] roboto-bold text-[17rem] text-[#0012AF] whitespace-nowrap text-center' >WINGWAYS</h1>
-=======
                 <h1 className='mt-[-5rem] roboto-bold text-[17rem] text-[#0012AF] text-[17.5vw] whitespace-nowrap text-center' >WINGWAYS</h1>
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
             </div>
 
             {/* Footer BG Icons */}

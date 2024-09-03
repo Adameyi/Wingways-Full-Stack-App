@@ -12,11 +12,7 @@ function HotelHero() {
     return (
         <div className='relative overflow-hidden'>
             <div
-<<<<<<< HEAD
-                className='absolute w-full sm:w-[67.5vw] h-[50vh] sm:h-screen right-0 bg-cover rounded-bl-3xl'
-=======
                 className='absolute w-full sm:w-[70vw] h-[50vh] sm:h-screen right-0 bg-cover rounded-bl-3xl'
->>>>>>> 74f34eb6a2ab4f954923805979c178f70d37fc18
                 style={{
                     backgroundImage: `url(${HotelHeroBackground})`,
                 }}
