@@ -10,7 +10,7 @@ import Hotel_Perth from '../assets/images/Hotel_Perth.png'
 function HotelHero() {
 
     return (
-        <div className='relative overflow-hidden'>
+        <div className='relative overflow-hidden sm:min-h-screen'>
             <div
                 className='absolute w-full sm:w-[70vw] h-[50vh] sm:h-screen right-0 bg-cover rounded-bl-3xl'
                 style={{
@@ -18,7 +18,7 @@ function HotelHero() {
                 }}
             >
                 {/* Social Media Side Selection*/}
-                <div className='hidden sm:block'>
+                <div className='hidden sm:block '>
                     <div className='absolute right-10 flex items-center h-[65vh]'>
                         <div className='rounded-full h-40 w-14 bg-white bg-opacity-20 flex flex-col justify-center items-center gap-2'>
                             <div className='bg-white h-10 w-10 rounded-full bg-opacity-20 flex justify-center items-center'>
@@ -68,7 +68,7 @@ function HotelHero() {
                             <div className='hidden md:block mt-2 h-16 w-3 mr-4 bg-white' />
                             <h1 className='hidden md:block roboto-regular text-white text-[1.6rem]'>Discover your ultimate escape at
                                 Australia's premier luxury resort,
-                                where paradise meets perfection.</h1>
+                                where paradise meets perfection. Escapade</h1>
                             <h1 className='lg:hidden roboto-regular text-white text-2xl mb-2'>Book your Dream Getaway Today</h1>
                         </div>
                         <div className='flex flex-row'>
