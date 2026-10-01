@@ -1,7 +1,9 @@
 
 A full-stack flight and hotel booking app. Users can search airports, pick departing and returning flights, choose seats, pay, and get a receipt.
 
-** Live demo:** [https://wingways-full-stack-app.vercel.app/](url)
+**Live Demo:** [https://wingways-full-stack-app.vercel.app/](url)
+
+
 **Figma UI:** [https://www.figma.com/design/N9AY7OAiisqNQw68zQzLXr/WingWays-Flights-Booking?node-id=0-1&p=f&t=VsxxJ6VJB05lyuQb-0](url)
 
 Home Page:
