@@ -18,7 +18,10 @@ DEBUG = os.environ.get("DEBUG", "True") == True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "adameyi.pythonanywhere.com"]
 
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = [
+    "https://wingways-full-stack-app.vercel.app",
+    "http://localhost:5173",
+]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
